@@ -29,37 +29,14 @@ insert into PAYMENTTYPE(name) values ('DAILY');
 insert into PAYMENTTYPE(name) values ('WEEKLY');
 insert into PAYMENTTYPE(name) values ('MONTHLY');
 
-insert into PAYMENT(type_id, student_id)
-values ((select id from PAYMENTTYPE where name = 'WEEKLY'),
-        (select id from STUDENT where name = 'John'));
-insert into PAYMENT(type_id, student_id)
-values ((select id from PAYMENTTYPE where name = 'MONTHLY'),
-        (select id from STUDENT where name = 'Oliver'));
-insert into PAYMENT(type_id, student_id)
-values ((select id from PAYMENTTYPE where name = 'WEEKLY'),
-        (select id from STUDENT where name = 'Henry'));
-insert into PAYMENT(type_id, student_id)
-values ((select id from PAYMENTTYPE where name = 'DAILY'),
-        (select id from STUDENT where name = 'James'));
+insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'John'), 300);
+insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'MONTHLY'), (select id from STUDENT where name = 'Oliver'), 300);
+insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'Henry'), 300);
+insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'DAILY'), (select id from STUDENT where name = 'James'), 300);
 
 
-insert into MARK(student_id, subject_id, mark)
-values ((select id from STUDENT where name = 'Chris'),
-        (select id from SUBJECT where name = 'Art'),
-        8);
-insert into MARK(student_id, subject_id, mark)
-values ((select id from STUDENT where name = 'Oliver'),
-        (select id from SUBJECT where name = 'History'),
-        5);
-insert into MARK(student_id, subject_id, mark)
-values ((select id from STUDENT where name = 'James'),
-        (select id from SUBJECT where name = 'Geography'),
-        9);
-insert into MARK(student_id, subject_id, mark)
-values ((select id from STUDENT where name = 'Jacob'),
-        (select id from SUBJECT where name = 'Math'),
-        4);
-insert into MARK(student_id, subject_id, mark)
-values ((select id from STUDENT where name = 'Logan'),
-        (select id from SUBJECT where name = 'PE'),
-        9);
+insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'Chris'), (select id from SUBJECT where name = 'Art'), 8);
+insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'Oliver'),(select id from SUBJECT where name = 'History'),5);
+insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'James'), (select id from SUBJECT where name = 'Geography'), 9);
+insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'Jacob'), (select id from SUBJECT where name = 'Math'), 4);
+insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'Logan'), (select id from SUBJECT where name = 'PE'), 9);
