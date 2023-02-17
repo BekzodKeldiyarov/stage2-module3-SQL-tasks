@@ -25,14 +25,14 @@ insert into SUBJECT(name, grade) values ('IT', 4);
 insert into SUBJECT(name, grade) values ('AI', 5);
 insert into SUBJECT(name, grade) values ('BDA', 5);
 
-insert into PAYMENTTYPE(name, payment_date) values ('DAILY', '2020-07-02 17:45:36');
-insert into PAYMENTTYPE(name, payment_date) values ('WEEKLY', '2020-07-02 17:45:36');
-insert into PAYMENTTYPE(name, payment_date) values ('MONTHLY', '2020-07-02 17:45:36');
+insert into PAYMENTTYPE(name) values ('DAILY');
+insert into PAYMENTTYPE(name) values ('WEEKLY');
+insert into PAYMENTTYPE(name) values ('MONTHLY');
 
-insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'John'), 300);
-insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'MONTHLY'), (select id from STUDENT where name = 'Oliver'), 300);
-insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'Henry'), 300);
-insert into PAYMENT(type_id, student_id, amount) values ((select id from PAYMENTTYPE where name = 'DAILY'), (select id from STUDENT where name = 'James'), 300);
+insert into PAYMENT(type_id, student_id, amount, payment_date) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'John'), 300, '2020-07-02 17:45:36');
+insert into PAYMENT(type_id, student_id, amount, payment_date) values ((select id from PAYMENTTYPE where name = 'MONTHLY'), (select id from STUDENT where name = 'Oliver'), 300, '2020-07-02 17:45:36');
+insert into PAYMENT(type_id, student_id, amount, payment_date) values ((select id from PAYMENTTYPE where name = 'WEEKLY'), (select id from STUDENT where name = 'Henry'), 300, '2020-07-02 17:45:36');
+insert into PAYMENT(type_id, student_id, amount, payment_date) values ((select id from PAYMENTTYPE where name = 'DAILY'), (select id from STUDENT where name = 'James'), 300, '2020-07-02 17:45:36');
 
 
 insert into MARK(student_id, subject_id, mark) values ((select id from STUDENT where name = 'Chris'), (select id from SUBJECT where name = 'Art'), 8);
